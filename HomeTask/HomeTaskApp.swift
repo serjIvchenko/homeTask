@@ -28,7 +28,7 @@ struct HomeTaskApp: App {
     
     func generateEmoji<T: ListItem>(type: T.Type) -> [T] {
         let emojiItems = ["smile": "😊", "rocket": "🚀", "party": "🎉", "heart": "❤️", "thumbsUp": "👍", "sun": "☀️"].map { key, value in
-            T(icon: Text(value) as! T.ItemIcon, title: key)
+            T(icon: Text(value) as! T.ItemIcon, title: key.capitalized)
         }
         
         return emojiItems
